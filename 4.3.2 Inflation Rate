@@ -1,0 +1,35 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	int year, displayyear;
+	double currentcost, inflation, total;
+
+	cout << "Enter your Item Cost: ";
+	cin >> currentcost;
+
+	cout << "Enter inflation rate (percentage e.g 2.5) :";
+	cin >> inflation;
+	
+	inflation = inflation / 100;
+
+	cout << "How many years? :";
+	cin >> year;
+
+	cout << "Year     Cost" << endl;
+	cout << "_______________" << endl;
+
+	cout << fixed << setprecision(2);
+
+	for (int i = 0; i <= year; i++)
+	{
+		displayyear = 2026 + i;
+
+		cout << displayyear << "  |  " << currentcost <<endl ;
+
+		currentcost = currentcost * (1 + inflation);
+	}
+	return 0;
+}
